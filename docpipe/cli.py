@@ -15,7 +15,11 @@ def main(argv: list[str] | None = None) -> int:
         prog="docpipe-md",
         description="Convert a supported document to Markdown with quality checks and OCR fallback.",
     )
-    parser.add_argument("source", type=Path, help="PDF, PPTX, DOCX, HWP/HWPX, ODT, RTF, or HTML file")
+    parser.add_argument(
+        "source",
+        type=Path,
+        help="PDF, PPTX, XLSX/XLSM, DOCX, HWP/HWPX, ODT, RTF, or HTML file",
+    )
     parser.add_argument("-o", "--output", type=Path, default=None, help="output Markdown path")
     args = parser.parse_args(argv)
 
